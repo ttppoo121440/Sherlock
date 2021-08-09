@@ -1,0 +1,205 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10300;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  animation: fadeInRight 0.5s linear forwards;
+  animation-delay: .5s;
+
+  .logo {
+    font-family: "Satisfy", cursive;
+    opacity: 0;
+    animation: fadeInLeft 0.5s linear forwards;
+    animation-delay: 1s;
+    vertical-align: middle;
+  }
+
+  @include media-breakpoint-up(md) {
+    flex-flow: row nowrap;
+  }
+
+  &-collapse {
+    display: flex;
+
+    @include media-breakpoint-down(sm) {
+      flex-basis: 100%;
+      align-items: center;
+    }
+  }
+
+  &-menu {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
+    transition: all 1s;
+    z-index: 10;
+
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+    }
+
+    @include media-breakpoint-down(sm) {
+      height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &.active {
+      @include media-breakpoint-down(sm) {
+        display: flex;
+        flex-direction: column;
+      }
+
+    }
+
+    &-item {
+      display: block;
+      opacity: 0;
+      animation: fadeInRight 0.5s linear forwards;
+
+      &:nth-child(1) {
+        animation-delay: 1s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 1.25s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 1.5s;
+      }
+
+      &:nth-child(4) {
+        animation-delay: 1.75s;
+      }
+
+      >a {
+        display: block;
+        padding: map-get($spacers, 4) map-get($spacers, 4);
+        transition: .2s;
+
+        @include media-breakpoint-down(sm) {
+          width: 100%;
+        }
+
+        &:hover {
+          color: #00B3D4;
+
+          @include media-breakpoint-down(sm) {
+            border-bottom: none;
+          }
+        }
+
+        &.active {
+          color: $navbar-link-active-color;
+          font-weight: bold;
+
+          @include media-breakpoint-down(sm) {
+            color: $black;
+          }
+        }
+
+        &.disabled {
+          cursor: default;
+          color: $navbar-link-disabled-color;
+        }
+      }
+    }
+
+
+    &-icon {
+      cursor: pointer;
+      position: relative;
+      margin-left: auto;
+      width: 32px;
+      height: 30px;
+      padding: map-get($spacers, 4);
+      transform: translate(0%, 0%);
+      z-index: 1040;
+
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+
+      &.active span {
+        background: transparent;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0);
+
+
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+          transition-delay: 0s, .5s;
+        }
+
+        &::after {
+          top: 0;
+          transform: rotate(-45deg);
+          transition-delay: 0s, .5s;
+        }
+      }
+
+      >span {
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background: $white;
+
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .2s;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+        cursor: pointer;
+
+        &::before {
+          @include navbar-transition-icon(-10px)
+        }
+
+        &::after {
+          @include navbar-transition-icon(10px)
+        }
+      }
+    }
+
+
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-150px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

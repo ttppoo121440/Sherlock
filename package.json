@@ -1,0 +1,31 @@
+{
+  "name": "Sherlock",
+  "version": "1.0.0",
+  "description": "My first-rate Nuxt.js project",
+  "author": "Jethro",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/google-analytics": "^2.2.0",
+    "aos": "^3.0.0-beta.6",
+    "axios": "^0.21.1",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "jquery": "^3.6.0",
+    "nuxt": "^2.15.7",
+    "nuxt-purgecss": "^0.2.1",
+    "popper.js": "^1.15.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^1.1.2",
+    "expose-loader": "^0.7.5",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.12",
+    "sass-loader": "^8.0.0"
+  }
+}
