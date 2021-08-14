@@ -5,7 +5,7 @@ module.exports = {
    ** Headers of the page
    */
   router: {
-    base: "/test1"
+    base: "/Sherlock"
   },
   head: {
     title: "Sherlock網頁設計工作室",
@@ -121,6 +121,20 @@ module.exports = {
     "nuxt-purgecss"
   ],
   purgeCSS: {
+    whitelist: [
+      "aos-init",
+      "aos-animate",
+      "data-aos-delay",
+      "data-aos-duration",
+      "fade-up",
+      "fade-left",
+      "fade-right",
+      "fade-down",
+      "flip-left",
+      "flip-right",
+      "zoom-in",
+      "zoom-in-up",
+    ],
     extractors: () => [
       {
         extractor: class {

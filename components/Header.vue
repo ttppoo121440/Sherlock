@@ -60,7 +60,7 @@
     <div class="header-title p-10">
       <h2 class="text-6xl text-white mb-6">Sherlock 工作室</h2>
       <p class="text-white font-black text-3xl">
-        保證節省您數月的煩惱、時間、金錢、人力，讓您全心專注在您的事業！
+        服務項目有，資訊系統整合建置、網路應用程式設計、軟體程式設計、ERP、形象網頁等。
       </p>
     </div>
   </header>

@@ -4,8 +4,8 @@
       <div class="text-center">
         <p class="mb-4">
           Sherlock 網站工作室 | 服務信箱：
-          <a href="mailto:ttppoo12144@gmail.com" style="color:#00B3D4"
-            >ttppoo12144@gmail.com</a
+          <a href="mailto:yctec.solutions@gmail.com" style="color:#00B3D4"
+            >yctec.solutions@gmail.com</a
           >
         </p>
         <p>© 2019 | Sherlock Information.</p>
